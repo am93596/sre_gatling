@@ -49,4 +49,4 @@
 ### Load Balancer Overview Diagram
 
 ![load-balancer-img](https://user-images.githubusercontent.com/88166874/134197989-d46a62fb-4552-4671-9bea-9604c7caec84.png)
-
+*TODO: update with full infrastructure diagram*
