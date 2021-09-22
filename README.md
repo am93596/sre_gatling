@@ -119,11 +119,26 @@ SNS is a service provided by AWS that works in conjunction with CloudWatch to ta
 5. Select the protocol (e.g. `Email`), and enter the endpoint (e.g. your email address)  
 6. Click `Create subscription`. This will send an email to the address you specified. Click the link in the email to allow subscription so that you can receive emails from SNS later  
 
+### Linking SNS to Alarm
+1. In CloudWatch, click `Alarms` -> `All alarms` -> `Create alarm`  
+2. In `Metrics` tab, select `EC2` -> `By Auto Scaling Group`. Select one of the metrics associated with your auto scaling group (e.g. `CPU utilisation`). Click `Select metric`.  
+3. Set the period to your preferred time (e.g. `1 minute`)  
+4. `Threshold type`: `Static`. `Whenever CPUUtilization is...`: select the appropriate one for your alarm (e.g. `Lower/Equal`). `than...`: input your threshold value (e.g. `1` for <=3%). Click `Next`.
+5. In the `Notification` section, set the `Alarm state trigger` to `In alarm`, and the `SNS topic` to the one you created earlier. You can also add an Auto Scaling action to trigger one of your ASG policies as follows:
+  1. Set the following: `Alarm state trigger`: `In alarm`, `Resource type`: `EC2 Auto Scaling group`, and select your ASG. Then select the policy you want to be carried out.
+6. Click `Next`, and give your alarm a name and description. Click `Next`. Then click `Create alarm`.
+
 ### SNS Application to Application (A2A)
 SNS A2A sends events to applications (e.g. Simple Queue Service (SQS)), so that actions can be taken automatically to react to changes. In the example of SQS, SNS can send messages to a subscribed queue so that the application(s) in the queue can process it.
 
 ### SNS Application to Person (A2P)
-SNS A2P sends events to people, usually through email or text, allowing you to stay up to date on any changes and actions being taken. For example, you may want to set up an SNS to notify you when a new instance is being spun up, or when a certain percentage of requests are failing.
+SNS A2P sends events to people, usually through email or text, allowing you to stay up to date on any changes and actions being taken. For example, you may want to set up an SNS to notify you when a new instance is being spun up, or when a certain percentage of requests are failing.  
+
+
+![241520686_593063538715923_6621770552432359305_n](https://user-images.githubusercontent.com/88166874/134354311-a663d701-ba13-4aab-af85-0b10a5b29661.jpg)  
+
+This diagram provides an overview of how the SNS application links with the CloudWatch setup and the auto scaling group. In the example, CloudWatch has been set up to track the CPU utilisation, with an alarm threshold set at 75%. If the CPU reaches or goes over this threshold, the alarm is triggered, which in turn triggers the SNS email to your email address, and the auto scaling group to scale out (make a new instance). The load balancer can then start redirecting traffic to the new instance, to reduce the number of users using the busy instance.
+
 
 ### Simple Queue Service (SQS)
 SQS is a message queueing service from AWS.
