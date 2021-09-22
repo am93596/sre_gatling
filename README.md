@@ -44,12 +44,20 @@
 - Select the number that corresponds with the class name for your new HAR file
 - Give it a description
 - When the test completes, copy the html file path it outputs at the end, and paste it into the browser -> this displays the various metrics related to how the test performed
+
 ![test-with-1-user](https://user-images.githubusercontent.com/88166874/134039241-bd3b7413-0272-4828-89e3-c7647b2d1670.PNG)  
 
 8. Run each one with 10% more visitors  
-- And enjoy watching them fail!
+- Increase the number in the following line (at the end of the .scala file) to increase the number of users:  
+
+![line-for-increasing-users](https://user-images.githubusercontent.com/88166874/134322063-04ce6edd-badb-4c79-a3ff-4aee5cc9052d.PNG)
+
+- And enjoy watching them fail!  
+
 ![test-with-10-users](https://user-images.githubusercontent.com/88166874/134039282-5b46276b-bc19-40ec-954b-c2895f42dee6.PNG)  
+
 ![test-with-100-users](https://user-images.githubusercontent.com/88166874/134039316-92a9bdb9-7559-47bb-b55e-e67ece3f3b26.PNG)  
+
 ![test-with-1000-users](https://user-images.githubusercontent.com/88166874/134039329-b5322dca-76ed-4f2b-8d58-3a6b307c8448.PNG)
 
 ### What I want to monitor
