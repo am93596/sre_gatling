@@ -46,10 +46,11 @@
 ![test-with-100-users](https://user-images.githubusercontent.com/88166874/134039316-92a9bdb9-7559-47bb-b55e-e67ece3f3b26.PNG)  
 ![test-with-1000-users](https://user-images.githubusercontent.com/88166874/134039329-b5322dca-76ed-4f2b-8d58-3a6b307c8448.PNG)
 
-### Load Balancer Overview Diagram
+### How CloudWatch Connects To Our Instances
+![241556504_353893073182767_944237784430600497_n](https://user-images.githubusercontent.com/88166874/134310351-092e0bac-cfe5-47f7-9cc1-773410570554.jpg)
 
+### Load Balancer Overview Diagram
 ![load-balancer-img](https://user-images.githubusercontent.com/88166874/134197989-d46a62fb-4552-4671-9bea-9604c7caec84.png)
-*TODO: update with full infrastructure diagram*
 
 ### What I want to monitor
 - CPU utilisation
