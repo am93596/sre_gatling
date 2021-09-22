@@ -119,10 +119,11 @@ SNS is a service provided by AWS that works in conjunction with CloudWatch to ta
 5. Select the protocol (e.g. `Email`), and enter the endpoint (e.g. your email address)  
 6. Click `Create subscription`. This will send an email to the address you specified. Click the link in the email to allow subscription so that you can receive emails from SNS later  
 
-### SNS A2A
+### SNS Application to Application (A2A)
+SNS A2A sends events to applications (e.g. Simple Queue Service (SQS)), so that actions can be taken automatically to react to changes. In the example of SQS, SNS can send messages to a subscribed queue so that the application(s) in the queue can process it.
 
+### SNS Application to Person (A2P)
+SNS A2P sends events to people, usually through email or text, allowing you to stay up to date on any changes and actions being taken. For example, you may want to set up an SNS to notify you when a new instance is being spun up, or when a certain percentage of requests are failing.
 
-### SNS A2P
-
-### SQS
-
+### Simple Queue Service (SQS)
+SQS is a message queueing service from AWS.
