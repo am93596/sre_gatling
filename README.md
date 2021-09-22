@@ -60,8 +60,25 @@
 
 ![test-with-1000-users](https://user-images.githubusercontent.com/88166874/134039329-b5322dca-76ed-4f2b-8d58-3a6b307c8448.PNG)
 
-### What I want to monitor
+### Scale Out and Scale In Policies
+
+### What are we monitoring?
 - CPU utilisation
 - Network In
 - RequestCountPerTarget
+- Network Monitoring
+- Application Performance Monitoring
+- Third-party resources
+
+### AWS CloudWatch Dashboard
+
+### What is the difference between scaling out and scaling up?
+- Scaling up means to use a more powerful server that can handle more requests, for example moving from a t2.micro instance to a t2.medium instance
+- Scaling out means to spin up new instances in line with the specified scaling policies
+
+### SNS A2A
+
+### SNS A2P
+
+### SQS
 
