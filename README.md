@@ -1,8 +1,3 @@
-# How CloudWatch Connects To Our Current Setup
-
-![241556504_353893073182767_944237784430600497_n](https://user-images.githubusercontent.com/88166874/134310351-092e0bac-cfe5-47f7-9cc1-773410570554.jpg)
-*find the final main.tf file in the [sre_terraform repo](https://github.com/am93596/sre_terraform)*
-
 # Performance testing 
 ## What Is Performance Testing?
 Performance testing is a series of tests that can be used to see how your application responds to particular scenarios. The tests mimic the production environment as closely as possible.  
@@ -75,6 +70,13 @@ Types of performance tests:
 ### Load Balancer With Test Users Diagram
 ![load-balancer-img](https://user-images.githubusercontent.com/88166874/134197989-d46a62fb-4552-4671-9bea-9604c7caec84.png)
 - In order to handle the number of users making requests as you increase the number of users, the auto scaling group will create new instances, and the load balancer can then redirect users to different instances so that no one instance is overloaded
+
+# CloudWatch
+
+## How CloudWatch Connects To Our Current Setup
+
+![241556504_353893073182767_944237784430600497_n](https://user-images.githubusercontent.com/88166874/134310351-092e0bac-cfe5-47f7-9cc1-773410570554.jpg)
+*find the final main.tf file in the [sre_terraform repo](https://github.com/am93596/sre_terraform)*
 
 ### What are we monitoring?
 - CPU utilisation
