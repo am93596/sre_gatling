@@ -1,8 +1,7 @@
-# Diagram of full infrastructure so far
-![241556504_353893073182767_944237784430600497_n](https://user-images.githubusercontent.com/88166874/134310351-092e0bac-cfe5-47f7-9cc1-773410570554.jpg)
+# How CloudWatch Connects To Our Current Setup
 
-### Load Balancer Overview Diagram
-![load-balancer-img](https://user-images.githubusercontent.com/88166874/134197989-d46a62fb-4552-4671-9bea-9604c7caec84.png)
+![241556504_353893073182767_944237784430600497_n](https://user-images.githubusercontent.com/88166874/134310351-092e0bac-cfe5-47f7-9cc1-773410570554.jpg)
+*find the final main.tf file in the [sre_terraform repo](https://github.com/am93596/sre_terraform)*
 
 # Performance testing 
 ## Java
@@ -60,7 +59,20 @@
 
 ![test-with-1000-users](https://user-images.githubusercontent.com/88166874/134039329-b5322dca-76ed-4f2b-8d58-3a6b307c8448.PNG)
 
+### Load Balancer With Test Users Diagram
+![load-balancer-img](https://user-images.githubusercontent.com/88166874/134197989-d46a62fb-4552-4671-9bea-9604c7caec84.png)
+- In order to handle the number of users making requests as you increase the number of users, the auto scaling group will create new instances, and the load balancer can then redirect users to different instances so that no one instance is overloaded
+
 ### Scale Out and Scale In Policies
+- Here is an example of a scale out policy in a terraform file. This one tracks the average CPU utilisation, and scales up by 1 instance when this goes over 3%.
+
+![scale-out-policy](https://user-images.githubusercontent.com/88166874/134338974-61aa82da-6396-441e-9689-df98e3b48526.PNG)
+
+- Here is an example of a scale in policy in a terraform file. It is connected to a CloudWatch alarm that tracks the number of bytes received by the instance on all network interfaces. If the number of bytes drops below 500,000 bytes, the policy terminates 1 instance from the group of instances created by the auto scaling group.
+
+![scale-down-policy](https://user-images.githubusercontent.com/88166874/134340393-0db2060b-2674-4522-bda2-4743c487afae.PNG)
+
+![scale-down-alarm](https://user-images.githubusercontent.com/88166874/134340407-7f080ff9-f51d-4691-b132-e515ce0e3bf6.PNG)
 
 ### What are we monitoring?
 - CPU utilisation
