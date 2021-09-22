@@ -27,7 +27,7 @@ Types of performance tests:
 - https://www.jetbrains.com/idea/download/#section=windows
 - Download community version
 ### Scala
-#### Setting up testing env
+#### Setting up testing environment
 - In IntelliJ (with admin permissions), navigate to plugins: (`CTRL+Alt+S`) -> `install scala plugin`
 
 ### Running the test with node app
