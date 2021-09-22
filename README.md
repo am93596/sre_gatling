@@ -18,20 +18,20 @@ Types of performance tests:
 
 ## Prerequisites For Using Gatling
 ### Java
-- https://devwithus.com/install-java-windows-10/
-- Download the installer
+- https://devwithus.com/install-java-windows-10/ (download the installer)
+- Java is the language behind Gatling, so we will need it installed before we can run any Gatling tests
 ### Gatling
-- https://gatling.io/get-started/
-- Download normal one (not enterprise)
+- https://gatling.io/get-started/ (download normal one, not enterprise)
+- Gatling is a tool used for performance testing, and we'll go into more detail about how to run these tests soon
 ### IntelliJ
-- https://www.jetbrains.com/idea/download/#section=windows
-- Download community version
+- https://www.jetbrains.com/idea/download/#section=windows (download community version)
+- IntelliJ is the Integrated Development Environment (IDE) that we'll be using for this project
 ### Scala
+- Scala is the language that the tests will be written in, so we will need this package in order to be able to run the test scripts
 #### Setting up testing environment
 - In IntelliJ (with admin permissions), navigate to plugins: (`CTRL+Alt+S`) -> `install scala plugin`
 
 ### Running the test with node app
-
 1. Make sure the app is running  
 - ssh into app machine, add DB_HOST environment variable, and npm start
 2. Open the page in the browser  
